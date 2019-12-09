@@ -1,0 +1,6 @@
+[
+  {
+    "ParameterKey": "AlertWebhookUrl",
+    "ParameterValue": "$alerting_webhook_preprod$"
+  }
+]

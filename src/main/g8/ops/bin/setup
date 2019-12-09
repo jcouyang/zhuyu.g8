@@ -1,0 +1,13 @@
+#!/bin/bash
+
+QUEUE_NAME=$app_queue_name$
+APP_ENV=\${APP_ENV:-Local}
+if [ \$APP_ENV == "Local" ]; then
+echo 'setting up local sqs queue'
+aws --endpoint-url=http://localhost:9324 sqs create-queue --queue-name \$QUEUE_NAME
+else
+echo "setting up sqs queue for \$APP_ENV"
+aws sqs create-queue --queue-name \$QUEUE_NAME
+fi
+
+

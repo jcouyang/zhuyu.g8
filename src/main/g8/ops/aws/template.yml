@@ -1,0 +1,31 @@
+AWSTemplateFormatVersion: "2010-09-09"
+
+Parameters:
+  AlertWebhookUrl:
+    Type: String
+Resources:
+  AlertTopic:
+    Type: AWS::SNS::Topic
+    Properties:
+      Subscription:
+        - Endpoint: !Ref AlertWebhookUrl
+          Protocol: "https"
+      TopicName: "AlertTopic"
+  $name;format="word,lower"$ProcessSlowAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmDescription: Oldest Message is more than 10mins for 45 mins
+      Namespace: AWS/SQS
+      MetricName: ApproximateAgeOfOldestMessage
+      Dimensions:
+        - Name: QueueName
+          Value: $app_queue_name$
+      Statistic: Maximum
+      Period: '900'
+      EvaluationPeriods: '3'
+      Threshold: '10'
+      ComparisonOperator: GreaterThanThreshold
+      AlarmActions:
+        - !Ref AlertTopic
+      OKActions:
+        - !Ref AlertTopic
