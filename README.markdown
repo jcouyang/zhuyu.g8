@@ -1,9 +1,16 @@
-A [Giter8][g8] template for ...!
+A [Giter8][g8] template for [zhuyu](https://github.com/jcouyang/zhuyu)!
+
+```
+sbt new jcouyang/zhuyu.g8
+```
+
+to bootstrap the app
+
+[![asciicast](https://asciinema.org/a/287714.svg)](https://asciinema.org/a/287714)
 
 Template license
 ----------------
-Written in <YEAR> by <AUTHOR NAME> <AUTHOR E-MAIL ADDRESS>
-[other author/contributor lines as appropriate]
+Written in 2019 by Jichao Ouyang oyanglulu-at-gmail-dot-com
 
 To the extent possible under law, the author(s) have dedicated all copyright and related
 and neighboring rights to this template to the public domain worldwide.
