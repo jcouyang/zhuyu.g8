@@ -8,9 +8,9 @@ object Dependencies {
   )
 
   lazy val zhuyu = {
-    val version = "0.2.0"
+    val version = "0.4.0"
     Seq(
-    "us.oyanglul" %% "zhuyu-sqs-worker" % version,
+    "us.oyanglul" %% "zhuyu" % version,
     "us.oyanglul" %% "zhuyu-effect-http4s" % version,
     "us.oyanglul" %% "zhuyu-effect-s3" % version
   )
